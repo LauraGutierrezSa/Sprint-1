@@ -22,3 +22,16 @@ covid
     .catch( err => {
         console.log(err.message);
     })
+
+//Nivell 1 exercici 2: Crea una arrow function que rebi un paràmetre i una funció callback i li passi a la funció un missatge o un altre (que s'imprimirà per consola) en funció del paràmetre rebut.
+
+const arrowFunction = (parameter, callback = (a, b) => {
+    let sum = a + b;
+    console.log("Sum is: " + sum);
+   }) => {
+    if (parameter === 'sum')
+    return callback(5, 8);
+    else (callback('Not a sum', 0))
+   };
+
+arrowFunction('sum');
