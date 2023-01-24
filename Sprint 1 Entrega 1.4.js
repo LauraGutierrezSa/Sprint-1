@@ -80,3 +80,14 @@ async function callAsyncFunction() {
 
 //Nivell 2 exercici 1: Crea una funció que retorni el doble del número que li passa com a paràmetre després de 2 segons. Crea una altra funció que rebi tres números i calculi la suma dels seus dobles fent servir la funció anterior.
 
+function multiplyByTwo(num) {
+  return new Promise((resolve) => {
+      setTimeout(() => {
+          resolve(num * 2);
+      }, 2000);
+  });
+}
+
+multiplyByTwo(5).then((result) => {
+  console.log(result);
+});
