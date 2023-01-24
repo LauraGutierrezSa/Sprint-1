@@ -72,3 +72,15 @@ const getEmployee = () => {
  
 getEmployee(1).then(employee => console.log(employee));
 getEmployee(5).catch(error => console.log(error))
+
+//Nivell 2 exercici 2:
+
+const getSalary = (employee) => { 
+    return new Promise((resolve, reject) => { 
+        const salary = salaries.find(salary => salary.id === employee.id); 
+        if (salary) { resolve(salary.salary); } 
+        else { reject(`The salary of the employee with id ${employee.id} was not found`); } }); }; 
+        
+        getEmployee(1).then(employee => getSalary(employee)
+        .then(salary => console.log(salary)))
+        .catch(error => console.log(error))
