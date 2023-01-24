@@ -46,9 +46,19 @@ const getSalary = (employee) => {
         .catch(error => console.log(error))
 
 //Nivell 1 exercici 1: Crea una funció asíncrona que rebi un id d'empleat/da i imprimeixi per pantalla el nom de l'empleat/da i el seu salari, usant les funcions getEmployee() i getSalary() que has definit a la tasca anterior.
+//ENCARA NO ESTÀ ACABAT, NO FUNCIONA COM VULL.
 
-const myAsycnFunction = (employee) => {
-    **l'estic fent**
+const myAsyncFunction = (employee) => {
+    return new Promise((resolve, reject) => {
+     const name = employees.find(name => name.id === employee.id);
+     if (name) { resolve(name.name)}
+     else { reject(`I can't find the employee that you're looking for.`)}
+    })
+    
+};
+getEmployee(2).then(employee => getSalary(employee)
+.then(salary => console.log(salary)))
+.catch(error => console.log(error))
    
 //Nivell 1 exercici 2: Crea una nova funció asíncrona que cridi a una altra que retorni una Promise que efectuï la seva funció resolve() després de 2 segons de la seva invocació.
 
@@ -67,3 +77,6 @@ async function callAsyncFunction() {
   }
   
   callAsyncFunction();
+
+//Nivell 2 exercici 1: Crea una funció que retorni el doble del número que li passa com a paràmetre després de 2 segons. Crea una altra funció que rebi tres números i calculi la suma dels seus dobles fent servir la funció anterior.
+
