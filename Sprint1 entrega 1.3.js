@@ -73,7 +73,7 @@ const getEmployee = () => {
 getEmployee(1).then(employee => console.log(employee));
 getEmployee(5).catch(error => console.log(error))
 
-//Nivell 2 exercici 2:
+//Nivell 2 exercici 2: Crea una altra arrow function getSalary() similar a l'anterior que rebi com a paràmetre un objecte employee i retorni el seu salari.
 
 const getSalary = (employee) => { 
     return new Promise((resolve, reject) => { 
