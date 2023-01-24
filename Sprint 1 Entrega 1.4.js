@@ -47,3 +47,23 @@ const getSalary = (employee) => {
 
 //Nivell 1 exercici 1: Crea una funció asíncrona que rebi un id d'empleat/da i imprimeixi per pantalla el nom de l'empleat/da i el seu salari, usant les funcions getEmployee() i getSalary() que has definit a la tasca anterior.
 
+const myAsycnFunction = (employee) => {
+    **l'estic fent**
+   
+//Nivell 1 exercici 2: Crea una nova funció asíncrona que cridi a una altra que retorni una Promise que efectuï la seva funció resolve() després de 2 segons de la seva invocació.
+
+function resolveAfter2Seconds() {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve('async function called and resolved.');
+      }, 2000);
+    });
+  }
+  
+async function callAsyncFunction() {
+    console.log('hold on');
+    const result = await resolveAfter2Seconds();
+    console.log(result);
+  }
+  
+  callAsyncFunction();
