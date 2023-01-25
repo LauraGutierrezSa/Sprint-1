@@ -104,3 +104,5 @@ async function calculateSum(num1, num2, num3) {
 calculateSum(2, 4, 5).then((result) => {
   console.log(result);
 });
+
+//Nivell 3 exercici 1: Força i captura tants errors com puguis dels nivells 1 i 2.
