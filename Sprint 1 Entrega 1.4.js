@@ -91,3 +91,16 @@ function multiplyByTwo(num) {
 multiplyByTwo(5).then((result) => {
   console.log(result);
 });
+
+async function calculateSum(num1, num2, num3) {
+  const doubledNumbers = await Promise.all([
+    multiplyByTwo(num1),
+    multiplyByTwo(num2),
+    multiplyByTwo(num3)
+  ]);
+  return doubledNumbers.reduce((acc, current) => acc + current, 0);
+}
+
+calculateSum(2, 4, 5).then((result) => {
+  console.log(result);
+});
