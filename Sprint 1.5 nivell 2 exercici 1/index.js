@@ -13,3 +13,15 @@ recursivePrint("hola profe", 5);
 
 // Sprint 1.5 nivell 2 exercici 2: Crea una funció que llisti per la consola el contingut del directori d'usuari/ària de l'ordinador utilizant Node Child Processes.
 
+const { exec } = require('child_process'); 
+
+function listDirectory() { 
+    const directory = process.cwd(); 
+    exec(`dir ${directory}`, (error, stdout, stderr) => { 
+        if (error) { console.error(`exec error: ${error}`); 
+        return; } 
+        
+    console.log(stdout); 
+}) } 
+    
+    listDirectory();
