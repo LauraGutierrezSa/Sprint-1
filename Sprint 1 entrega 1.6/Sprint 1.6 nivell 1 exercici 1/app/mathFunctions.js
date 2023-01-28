@@ -18,7 +18,9 @@ function divide (num1, num2) {
     return result
 }
 
-module.exports = sum;
-module.exports = substract;
-module.exports = multiply;
-module.exports = divide;
+module.exports = {
+    sum,
+    substract,
+    multiply,
+    divide
+}
