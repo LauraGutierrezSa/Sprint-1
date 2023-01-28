@@ -1,7 +1,4 @@
-const sum = require('../app/mathFunctions.js');
-const substract = require('../app/mathFunctions.js');
-const multiply = require('../app/mathFunctions.js');
-const divide = require('../app/mathFunctions.js');
+const {sum, substract, multiply, divide  }= require('../app/mathFunctions.js');
 
 console.log(sum(""));
 console.log(sum("3", "4"));
