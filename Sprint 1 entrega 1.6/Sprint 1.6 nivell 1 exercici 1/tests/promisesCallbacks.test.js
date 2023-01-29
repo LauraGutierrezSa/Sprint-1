@@ -1,21 +1,21 @@
 const arrowFunction = require('../app/promisesCallbacks.js');
 
-describe("arrowFunction()", () => {
+describe("arrowFunction() tests", () => {
     test("parameter 'sum' should call the callback with 5 and 8 and log the sum", () => {
         console.log = jest.fn();
         arrowFunction('sum');
         expect(console.log).toHaveBeenCalledWith("Result of sum is 13");
     });
 
-    test("parameter 'not sum' should call the callback with 'Not a sum' and 0", () => {
+    test("parameter 'not sum' should call the callback with 'Not a sum'", () => {
         console.log = jest.fn();
         arrowFunction('not sum');
         expect(console.log).toHaveBeenCalledWith("Not a sum");
     });
 
-    test("when no parameter is passed it should call the callback with 'Not a sum' and 0", () => {
+    test("when no parameter is passed, it should call the callback with 'Not a sum'", () => {
         console.log = jest.fn();
         arrowFunction();
-        expect(console.log).toHaveBeenCalledWith("Not a sum");
+        expect(console.log).toBe("Not a sum");
     });
 });
