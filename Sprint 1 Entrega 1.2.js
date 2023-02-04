@@ -1,36 +1,12 @@
 //Nivell 1 exercici 1: Mostra per la consola el resultat d'una arrow function autoinvocable que sumi dos nombres.
-/* Dani: segurament et digui que el console.log ha d'estar fora de la funció i la funció fer return del càlcul
-per mi està bé, tot i que la majoria de gent fa un return 2+2 i és correcte. */
-(() => { 
-    const readline = require('readline').createInterface({ 
-      input: process.stdin, output: process.stdout });
-  
-    readline.question("Enter the first number: ", firstNum => { 
-    readline.question("Enter the second number: ", secondNum => { 
-    const result = Number(firstNum) + Number(secondNum); 
-    
-    console.log(`The sum of ${firstNum} and ${secondNum} is ${result}.`); 
-    readline.close(); }); })
-      })();
+console.log((() => {
+  return 5+2;
+})());
 
 //Nivell 2 exercici 1: Crea una arrow function que, rebent un paràmetre, retorni un objecte amb un atribut que tingui com a valor el paràmetre rebut.
-/* Dani: aquesta seria incorrecte pq la funció no està rebent cap parametre.*/
 
-const objectAttribute = "red";
-const objectMaker = () => {
-    
-      const createdObject = {
-          objName: "Laura",
-          objAge: 35,
-          objHairColor: objectAttribute,
-          objHasChildren: true,
-    
-      }
-      const result = createdObject;
-      console.log(result)
-  };
-  
-  objectMaker();
+const createObject = (attribute) => ({attribute});
+console.log(createObject('this is the value of the attribute'))
 
 //Nivell 2 exercici 2: Crea una classe "Persona" que rebi un paràmetre 'nom' en ser instanciada. 
 //La classe inclourà un mètode dirNom que imprimeixi per consola el paràmetre 'nom'. 
