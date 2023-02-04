@@ -1,7 +1,7 @@
 //Nivell 1 exercici 1: Crea una funció que retorni una Promise que invoqui la funció resolve() o reject() que rep. Invoca-la passant-li les dues funcions de manera que imprimeixin un missatge diferent depenent de si la Promise es resol o no.
 
 const hasCovid = true;
-const covid = new Promise((resolve, reject) => {
+const covid = (hasCovid) => new Promise((resolve, reject) => {
     if(!hasCovid) {
         const covidSymptoms = {
             fever: 'I have a fever',
@@ -14,7 +14,7 @@ const covid = new Promise((resolve, reject) => {
     }
 });
 
-covid
+covid()
     .then( res => {
         console.log('Covid test showed a positive result. Off to quarantine you go.');
         console.log(res);
@@ -59,19 +59,23 @@ let salaries = [{
     id: 3,
     salary: 2000
 }];
-
-const getEmployee = () => {
-    return new Promise((resolve, reject) => {
-      if (employees[1]) {
-          resolve(employees[1])
-      } else {
-          reject(`Employee with id ${1} not found`)
+  module.exports.salaries = salaries
+  
+  const getEmployee = (id) =>
+    new Promise((resolve, reject) => {
+      if (id === undefined) {
+        reject(new Error('Please enter a valid id.'))
       }
-    });
-  };
- 
-getEmployee(1).then(employee => console.log(employee));
-getEmployee(5).catch(error => console.log(error))
+      const employee = employees.find((employee) => employee.id === id)
+      employee
+        ? resolve(employee)
+        : reject(new Error(`The id ${id} was not found, please enter a valid id.`))
+    })
+  module.exports.getEmployee = getEmployee
+  
+  getEmployee(1).then((res) => console.log('Employee with if nº 1 is:', res))
+  getEmployee(2).then((res) => console.log('Employee with id nº 2  is:', res))
+  getEmployee(4).catch((err) => console.log(err.message));
 
 //Nivell 2 exercici 2: Crea una altra arrow function getSalary() similar a l'anterior que rebi com a paràmetre un objecte employee i retorni el seu salari.
 
