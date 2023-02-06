@@ -46,19 +46,19 @@ const getSalary = (employee) => {
         .catch(error => console.log(error))
 
 //Nivell 1 exercici 1: Crea una funció asíncrona que rebi un id d'empleat/da i imprimeixi per pantalla el nom de l'empleat/da i el seu salari, usant les funcions getEmployee() i getSalary() que has definit a la tasca anterior.
-//ENCARA NO ESTÀ ACABAT, NO FUNCIONA COM VULL.
 
-const myAsyncFunction = (employee) => {
-    return new Promise((resolve, reject) => {
-     const name = employees.find(name => name.id === employee.id);
-     if (name) { resolve(name.name)}
-     else { reject(`I can't find the employee that you're looking for.`)}
-    })
-    
+ const myAsyncFunction = async (id) => {
+    try {
+        const employeeName = await getEmployee(id);
+        const employeeSalary = await getSalary(employeeName);
+
+        return (console.log(`Name: ${employeeName.name}, salary:  ${employeeSalary}`));
+    } catch (e) {
+        console.log('Error. Please enter a valid id.');
+    }
 };
-getEmployee(2).then(employee => getSalary(employee)
-.then(salary => console.log(salary)))
-.catch(error => console.log(error))
+
+myAsyncFunction(1)
    
 //Nivell 1 exercici 2: Crea una nova funció asíncrona que cridi a una altra que retorni una Promise que efectuï la seva funció resolve() després de 2 segons de la seva invocació.
 
