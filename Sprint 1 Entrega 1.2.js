@@ -12,10 +12,6 @@ console.log(createObject('this is the value of the attribute'))
 //La classe inclourà un mètode dirNom que imprimeixi per consola el paràmetre 'nom'. 
 //Invoca el mètode dirNom des de fora de la classe.
 
-/* Dani: Només necessites el mètode showname que has fet (és l'equivalent del dirNom que demana l'enunciat). Només has d'instanciar Persona una vegada i despres cridar el metode dirnom / showname (ja ho fas).
-Pots intentar penjar-li perque si que fas el que demana l'enunciat pero no exactament com diu i potser t'ho tira enrere*/
-
-
 class Person {
     #personName;
     #lastName;
@@ -87,17 +83,6 @@ function createPerson(){
 createPerson()
 
 //Nivell 3 exercici 2: Escriu una function creadora d'objectes que faci instàncies d'una classe abstracta. Invoca-la amb diferents definicions.
-//NOTA: ENCARA NO ESTÀ ACABAT NI FUNCIONA. No estic acabant d'entendre aquest exercici ni estic segura d'estar plantejant-lo correctament.
-
-
-/* Dani: Aquest jo me'l vaig deixar, l'enunciat fa una mica de trampa perquè la definició d'una classe abstracta és que no es pot instanciar.
-en Java si que hi ha una paraula reservada on tu crees una classe explicitament abstracta. En javascript la manera habitual és 
-que dins el constructor de la classe que vols que sigui abstracta has de tenir un if que impedeixi instanciarla. Jo vaig intentar fer aixo + crear una segona classe que fos hereva 
-i instanciar l'hereva pero em va dir que no. La gent que ho ha resolt no crea cap classe, fa una funció a l'antiga (abans de ecma6) y ho fa amb la paraula prototype i un if que impedeixi instanciar.
-Ho pots intentar o saltar-t'ho, pero no passis dies en aixo pq no crec que aporti massa.
-Molt bé perquè fins ara estas fent servir callbacks i maneig d'errors que no es veu fins al final de l'sprint pero t'estas complicant la vida més del compte.
-
-*/
 
 
 class BodyFeatures {
